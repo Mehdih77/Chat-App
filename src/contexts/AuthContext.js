@@ -10,7 +10,7 @@ export const useAuth = () => {
 
 
 export default function AuthProvider({ children }) {
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const history = useHistory();
 
@@ -18,7 +18,9 @@ export default function AuthProvider({ children }) {
         auth.onAuthStateChanged( user => {
             setUser(user);
             setLoading(false);
-            history.push('/chats')
+            if (user) {
+                history.push('/chats')
+            }
         })
         
     }, [user,history])
