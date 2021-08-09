@@ -16,14 +16,13 @@ export default function Login() {
         <div id='login-page'>
             <div id='login-card'>
                 <h2>Welcome To Chat Messenger</h2>
-                <div className='login-button google'
-                onClick={signInWithGoogle}>
-                    <GoogleOutlined/> Sign In With Google
-                </div>
+       
+                    <button onClick={signInWithGoogle} className='login-button google'><GoogleOutlined/> Sign In With Google</button>
+                
                 <br/> <br/>
-                <div className='login-button facebook'>
+                <button className='login-button facebook'>
                     <FacebookOutlined/> Sign In With Facebook
-                </div>
+                </button>
             </div>
         </div>
     )

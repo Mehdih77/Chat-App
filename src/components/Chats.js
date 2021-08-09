@@ -1,4 +1,4 @@
-import React, {useState,useEffect,useRef} from 'react';
+import React, {useState,useEffect} from 'react';
 import { auth } from '../Firebase/Firebase';
 import { ChatEngine } from 'react-chat-engine';
 import { useHistory } from 'react-router';
@@ -45,6 +45,7 @@ export default function Chats() {
             formdata.append("username", user.email);
             formdata.append("secret", user.uid);
 
+            
         getFile(user.photoURL)
             .then((avatar) => {
                     formdata.append("avatar", avatar, avatar.name );
